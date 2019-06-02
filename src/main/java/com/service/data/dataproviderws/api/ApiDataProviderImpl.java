@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
-
 @RestController
 @RequestMapping("api")
 public class ApiDataProviderImpl implements ApiDataProvider {
@@ -21,5 +19,9 @@ public class ApiDataProviderImpl implements ApiDataProvider {
         return new String[]{"Java", "JavaScript", "NodeJs", "Spring", "Golang"};
     }
 
+    @GetMapping(value = "/currencies")
+    public String[] getCurrency() {
+        return new String[]{"EUR", "USD", "CAD", "FUN", "URS"};
+    }
 
 }
